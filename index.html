@@ -79,7 +79,7 @@
                 const staffName       = $('input[name="staffName"]').val();
                 const contactNumber   = $('input[name="contactNumber"]').val();
                 const contactAddress = $('input[name="contactAddress"]').val();
-                const msg = `${customerName}\n${staffName}\n${contactNumber}\n${contactAddress}`;
+                const msg = `【お客様情報の登録】\n${customerName}\n${staffName}\n${contactNumber}\n${contactAddress}`;
                 sendText(msg);
                 return false;
             });
