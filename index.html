@@ -13,23 +13,23 @@
         
         <p class="mt-3">お客様名（法人名）</p>
         <div>
-            <input class="form-control w-100 mt-1" name="customerName" value="満タン" required>
+            <input class="form-control w-100 mt-1" name="customerName" required>
         </div>
 
         <p class="mt-3">ご担当社様名</p>
         <div>
-            <input class="form-control w-100 mt-1" name="staffName" value="なし" required>
+            <input class="form-control w-100 mt-1" name="staffName" required>
         </div>
 
         <p class="mt-3">連絡先<br>
                         ※確定納期をご連絡させていただきます</p>
         <div>
-            <input class="form-control w-100 mt-1" name="contactNumber">
+            <input class="form-control w-100 mt-1" name="contactNumber" required>
         </div>
 
         <p class="mt-3">納入先住所</p>
         <div>
-            <input class="form-control w-100 mt-1" name="contactAddress">
+            <input class="form-control w-100 mt-1" name="contactAddress" required>
         </div>
         
         
@@ -75,12 +75,11 @@
 
         $(function () {
             $('form').submit(function () {
-                const oilSelect          = $('select[name="oilSelect"]').val();
-                const deliveryDate       = $('input[name="deliveryDate"]').val();
-                const deliveryQuantity   = $('input[name="deliveryQuantity"]').val();
-                const deliveryConditions = $('input[name="deliveryConditions"]').val();
-                const deliveryNote       = $('input[name="deliveryNote"]').val();
-                const msg = `${oilSelect}\n${deliveryDate}\n${deliveryQuantity}\n${deliveryConditions}\n${deliveryNote}`;
+                const customerName          = $('select[name="customerName"]').val();
+                const staffName       = $('input[name="staffName"]').val();
+                const contactNumber   = $('input[name="contactNumber"]').val();
+                const contactAddress = $('input[name="contactAddress"]').val();
+                const msg = `${customerName}\n${staffName}\n${contactNumber}\n${contactAddress}`;
                 sendText(msg);
                 return false;
             });
