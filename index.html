@@ -10,46 +10,29 @@
 <body>
 
     <form class="w-75 mx-auto">
-        <p class="mt-3">お客様名</p>
-        <div>
-            <select class="form-control w-100 mt-1" name = "oilSelect" required>
-                <option value = "3100-軽油">軽油</option>
-                <option value = "2100-灯油">灯油</option>
-                <option value = "4500-重油">重油</option>
-            </select>
-        </div>
-
-        <p class="mt-3">納入希望日</p>
-        <div>
-            <input type="date" class="form-control w-100 mt-1" id="delivery_date" name="deliveryDate" max=value="2030-12-31" required>
-        </div>
-        <script type="text/javascript">
-            window.onload = function(){
-                const today = new Date();
-                const delivery_yyyy = today.getFullYear();
-                const delivery_mm   = ("0" + (today.getMonth() + 1)).slice(-2);
-                const delivery_dd   = ("0" + (today.getDate()  + 1)).slice(-2);
-                const today_dd      = ("0" + (today.getDate()     )).slice(-2);
-                document.getElementById("delivery_date").value = delivery_yyyy + "-" + delivery_mm + "-" + delivery_dd;
-                document.getElementById("delivery_date").min   = delivery_yyyy + "-" + delivery_mm + "-" + today_dd;
-            }
-        </script>
         
-        <p class="mt-3">納入数量<br>
-                        ※数量指定の場合のみご記入下さい</p>
+        <p class="mt-3">お客様名（法人名）</p>
         <div>
-            <input class="form-control w-100 mt-1" name="deliveryQuantity" value="満タン" required>
+            <input class="form-control w-100 mt-1" name="customerName" value="満タン" required>
         </div>
 
-        <p class="mt-3">納入条件（場所、時間）の指定</p>
+        <p class="mt-3">ご担当社様名</p>
         <div>
-            <input class="form-control w-100 mt-1" name="deliveryConditions" value="なし" required>
+            <input class="form-control w-100 mt-1" name="staffName" value="なし" required>
         </div>
 
-        <p class="mt-3">連絡事項／備考</p>
+        <p class="mt-3">連絡先<br>
+                        ※確定納期をご連絡させていただきます</p>
         <div>
-            <input class="form-control w-100 mt-1" name="deliveryNote">
+            <input class="form-control w-100 mt-1" name="contactNumber">
         </div>
+
+        <p class="mt-3">納入先住所</p>
+        <div>
+            <input class="form-control w-100 mt-1" name="contactAddress">
+        </div>
+        
+        
         
         <input type="submit" class="mt-4 btn btn-primary" value="送信">
     </form>
